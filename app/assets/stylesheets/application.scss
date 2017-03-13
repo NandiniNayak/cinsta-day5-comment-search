@@ -1,0 +1,11 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.navbar-default {
+    background-color: aqua;
+    border-color: purple;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: blue;
+}
