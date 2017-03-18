@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'year_group/page'
+
   resources :posts
   devise_for :users
   root 'home#page'

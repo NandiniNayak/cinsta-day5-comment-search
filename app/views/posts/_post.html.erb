@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title"><%= link_to post.title, post%> <span class="badge pull-right"><%= post.created_at.strftime('%d %b %Y') %></span> </h2>
+  </div>
+  <div class="panel-body">
+    <%= image_tag post.image, width: '100%' %>
+    <p><%= post.description %></p>
+    <p><%= link_to 'More info', post, class: 'btn btn-warning' %></p>
+    <p>Posted by: <%= post.user.email %></p>
+  </div>
+</div>
