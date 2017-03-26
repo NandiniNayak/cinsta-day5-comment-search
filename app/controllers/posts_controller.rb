@@ -4,7 +4,16 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    # fetch the yeargroup specific posts and display, in descending order
+
+
+    if params[:search]
+      # if a particular post was searched, call a search function to search for the parameter
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+        @posts = Post.where(year_group: params[:year_group]).order(created_at: :desc)
+    end
+
   end
 
   # GET /posts/1

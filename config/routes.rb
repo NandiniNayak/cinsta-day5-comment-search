@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   get 'year_group/page'
 
-  resources :posts
+  resources :posts do
+    resources :comments , only: [:create]
+  end
   devise_for :users
   root 'home#page'
 
